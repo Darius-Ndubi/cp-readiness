@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title> Google</title>
+
+        <!-- On page styling-->
+        <style>
+        #logo {
+            margin-left: 40%;
+            margin-right: 50%;
+            margin-top: 150px;
+        }
+
+        .center{
+            margin:0 auto;
+            width:500px;
+            padding: 5px;     
+         }
+
+         #foot_right{
+             margin-top: -30px;
+             float: right;
+            
+         }
+         #content{
+             padding-bottom: 160px;
+         }
+         ul a{
+             padding-right: 30px;
+             margin-top:50px;
+             color: black;
+             font-size:13px;
+         }
+        </style>
+    </head>
+
+    <body>
+        <!--To hold the nav-bar-->
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+                <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
+                <nav class="my-2 my-md-0 mr-md-3">
+                    <a class="p-2 text-dark" href="#">Gmail</a>
+                    <a class="p-2 text-dark" href="#">Images</a>
+                    <a href="#">
+                        <span style="font-size:1.5em;" class="glyphicon glyphicon-th" alt="Google apps"></span>
+                    </a>
+                </nav>
+                <a class="btn btn-primary" href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign in</a>
+            </div>
+        </header>
+
+        <body>
+            <section id="content">
+                     {% from "includes/_formhelpers.html" import render_field %}
+                    <div class="center">
+                        {% include 'includes/_messages.html' %}
+                    </div>
+                    <form method="POST" action="">
+                        <div id="logo">
+                            <img src="../static/images/logos/googlelogo.png" width="272" height="92" alt="Google">
+                        </div>
+                        <div class="form-group center">
+                            {{render_field(form.input,placeholder="Search Google or type URL", class="form-control")}}
+                        </div>
+                    
+                        <div class="center">
+                            <ul style="padding: 20px; margin-left: 120px;">
+                                <button class="btn btn-sm" type="submit">Google Search</button>
+                                <button class="btn btn-sm" type="">I'm Feeling Lucky</button>
+                            </ul>
+                        </div>
+                    </form>
+            </section>
+         
+
+            <footer style="height: 30px;" class="footer">
+                <div>
+                    <ul>
+                        <a href="https://www.google.com/intl/en_ke/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1" target="_blank">Advertising</a>
+                        <a href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1#?modal_active=none" target="_blank">Business</a>
+                        <a href="https://www.google.com/intl/en_ke/about/?utm_source=google.com&utm_medium=referral&utm_campaign=hp-footer&fg=1" target="_blank">About</a>
+                    </ul>
+                </div>
+
+                <div id="foot_right">
+                    <ul>
+                        <a href="https://policies.google.com/privacy?hl=en&gl=ke" target="_blank">Privacy</a>
+                        <a href="https://policies.google.com/terms?hl=en&gl=ke" target="_blank">Terms</a>
+                        <a href="https://www.google.com/preferences?hl=en" target="_blank">Settings</a>
+                    </ul>
+                </div>
+            </footer>
+
+            <!--Script below the content-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://gist.github.com/ann-mukundi/1d1ff79475fcfc9faddf68f34b1594a3.js"></script>
+    </body>
+</html>
